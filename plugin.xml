@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.example.imei"
+      version="0.1.0">
+    <name>Imei</name>
+    <description>Imei Plugin</description>
+    <keywords>imei</keywords>
+ 
+ 
+    <js-module src="www/imei.js" name="Imei">
+        <clobbers target="window.imei" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Imei">
+                <param name="android-package" value="com.example.imei.Imei"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/Imei.java" target-dir="src/com/example/imei" />     
+     </platform>         
+</plugin>
